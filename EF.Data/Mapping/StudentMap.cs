@@ -32,7 +32,8 @@ namespace EF.Data.Mapping
                .WithMany(s => s.Students)
                .Map(s => s.ToTable("StudentCourse")
                    .MapLeftKey("StudentId")
-                   .MapRightKey("CourseId"));
+                   .MapRightKey("CourseId")    //这里如果不手动映射的键值的话，就会按照Class名_ID来生成主键
+                   );
 
        }
     }
